@@ -1,6 +1,6 @@
 tony = User.create(username: 'iron_man', password: 'stark')
 james = User.create(username: 'war_machine', password: 'rhodes')
-steve = User.create(username: 'captain_america', password: 'roger')
+steve = User.create(username: 'captain_america', password: 'rogers')
 peter = User.create(username: 'spider_man', password: 'parker')
 
 Book.create(title: "To Kill A Mockingbird", author: "Harper Lee", description: "To Kill a Mockingbird by Harper Lee centres on Atticus Finch's attempts to prove the innocence of Tom Robinson, a black man who has been wrongly accused of raping a white woman in 1930s Alabama.", user_id: tony.id)
