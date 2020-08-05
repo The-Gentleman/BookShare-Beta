@@ -5,22 +5,26 @@ class UserController < ApplicationController
     end 
 
     post '/login' do 
-        # find the user
         @user = User.find_by_username(params[:username])
-        #  authenticate the user
         if @user && @user.authenticate(params[:password])
-        # log them in
             session[:user_id] = @user.id
-        # redirect user
-            redirect to "/user/#{@user.id}"
+            redirect to "/users/#{@user.id}"
         else 
-        # show an error message using flash
-        # redirect back to login
             redirect to '/login'
         end 
     end 
 
-    get '/user/:id' do 
-        'users profile page'
+    get '/users/:id' do 
+        @user = User.find_by_id(params[:id])
+        erb :'/users/show'
+    end 
+
+    get '/signup' do 
+        erb :'/users/signup'
+    end 
+
+    post '/signup' do 
+        @user = User.create(params)
+        session[:id] = @user.id
     end 
 end 
