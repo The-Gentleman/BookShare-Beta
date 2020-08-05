@@ -28,4 +28,9 @@ class UserController < ApplicationController
         session[:id] = @user.id
         redirect to "/users/#{@user.id}"
     end 
+
+    get '/logout' do 
+        session.clear
+        redirect to '/'
+    end 
 end 
