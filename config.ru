@@ -5,5 +5,9 @@ if ActiveRecord::Migrator.needs_migration?
 end
 
 run ApplicationController
+<<<<<<< HEAD
 use UsersController
+=======
+use UserController
+>>>>>>> e33dc94c4ccaf4aa76cc724718f02c6c1fbae002
 use BooksController
